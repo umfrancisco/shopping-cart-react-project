@@ -3,7 +3,7 @@ import { TagContainer } from '../Tag/styles'
 
 export const Imagem = styled.div`
 	width: 100%;
-	height: 560px;
+	height: 620px;
 	display: block;
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -11,10 +11,14 @@ export const Imagem = styled.div`
 	
 	.container {
 		position: relative;
-		padding-top: 340px;
+		padding-top: 100px;
 		display: flex;
 		justify-content: space-between;
 		align-items: flex-end;
+	}
+	
+	img {
+		border-radius: 8px;
 	}
 	
 	${TagContainer} {
