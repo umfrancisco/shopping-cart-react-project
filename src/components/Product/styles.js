@@ -6,6 +6,7 @@ export const Card = styled.div`
 	background-color: ${cores.cinza};
 	border-radius: 8px;
 	padding: 8px;
+	position: relative;
 	
 	img {
 	  width: 100%;
@@ -32,3 +33,12 @@ export const Descricao = styled.p`
 	display: block;
 	margin-top: 16px;
 `;
+
+export const Infos = styled.div`
+	position: absolute;
+	top: 16px;
+	right: 16px;
+`;
+
+
+

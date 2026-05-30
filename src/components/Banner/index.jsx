@@ -7,11 +7,12 @@ const Banner = () => (
 	<Imagem style={{ backgroundImage: `url(${bannerImg})` }}>
 		<div className='container'>
 			<Tag size='big'>Destaque do dia</Tag>
-			<img src="https://raw.githubusercontent.com/umfrancisco/Shopping_Cart_Backend/refs/heads/main/images/red-dead-redemption.png" alt="destaque"/>
 			<div>
-				<Titulo>Red Dead Redemption</Titulo>
+				<img 
+					src="https://raw.githubusercontent.com/umfrancisco/Shopping_Cart_Backend/refs/heads/main/images/sleeping-dogs.png" 
+					alt="destaque"/>
+				<Titulo>Sleeping Dogs</Titulo>
 				<Precos>
-					De <span>R$ 250,00</span> <br />
 					Por R$ 99,90
 				</Precos>
 			</div>

@@ -19,6 +19,8 @@ export const Imagem = styled.div`
 	
 	img {
 		border-radius: 8px;
+		max-height: 320px;
+		margin-top: 8px;
 	}
 	
 	${TagContainer} {
@@ -30,13 +32,9 @@ export const Imagem = styled.div`
 export const Titulo = styled.h2`
 	font-size: 36px;
 	max-width: 450px;
+	margin-top: 16px;
 `;
 
 export const Precos = styled.p`
 	font-size: 24px;
-	margin-top: 24px;
-	
-	span {
-		text-decoration: line-through;
-	}
 `;
