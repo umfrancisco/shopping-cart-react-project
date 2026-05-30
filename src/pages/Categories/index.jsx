@@ -1,4 +1,3 @@
-import Banner from '../../components/Banner'
 import ProductsList from '../../components/ProductsList'
 
 const data = [
@@ -41,12 +40,14 @@ const data = [
 	
 ]
 
-const Home = () => (
+const Categories = () => (
 	<>
-		<Banner />
-		<ProductsList title="Promoções" background="black" games={data}/>
+		<ProductsList title="Ação" background="black" games={data}/>		
+		<ProductsList title="Aventura" background="gray" games={data}/>
+		<ProductsList title="Fantasia" background="black" games={data}/>		
+		<ProductsList title="FPS" background="gray" games={data}/>	
 	</>
 );
 
-export default Home;
+export default Categories;
 

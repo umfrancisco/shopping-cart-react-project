@@ -13,7 +13,7 @@ export const Container = styled.section`
 
 export const List = styled.ul`
 	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+	grid-template-columns: repeat(4, minmax(200px, 1fr));
 	column-gap: 24px;
 	margin-top: 40px; 
 `;
