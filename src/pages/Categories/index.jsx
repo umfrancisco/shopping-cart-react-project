@@ -42,10 +42,10 @@ const data = [
 
 const Categories = () => (
 	<>
-		<ProductsList title="Ação" background="black" games={data}/>		
-		<ProductsList title="Aventura" background="gray" games={data}/>
-		<ProductsList title="Fantasia" background="black" games={data}/>		
-		<ProductsList title="FPS" background="gray" games={data}/>	
+		<ProductsList title="Ação" background="gray" games={data}/>		
+		<ProductsList title="Aventura" background="black" games={data}/>
+		<ProductsList title="Fantasia" background="gray" games={data}/>		
+		<ProductsList title="FPS" background="black" games={data}/>	
 	</>
 );
 
