@@ -1,12 +1,10 @@
-import { Imagem, Titulo, Precos } from './styles'
-import Tag from '../Tag'
+import { Imagem, Titulo, Precos } from '../Banner/styles'
 import bannerImg from '../../assets/images/mfakurian_black.jpg'
 import Button from '../Button'
 
-const Banner = () => (
+const Hero = () => (
 	<Imagem style={{ backgroundImage: `url(${bannerImg})` }}>
 		<div className='container'>
-			<Tag size='big'>Destaque do dia</Tag>
 			<div>
 				<img 
 					src="https://raw.githubusercontent.com/umfrancisco/Shopping_Cart_Backend/refs/heads/main/images/sleeping-dogs.png" 
@@ -16,11 +14,11 @@ const Banner = () => (
 					Por R$ 99,90
 				</Precos>
 			</div>
-			<Button type="link" to='/product/1' title='Clique aqui'>
-				Veja a oferta
+			<Button type="link" to='/aasd' title='Clique aqui'>
+				Adicionar ao carrinho
 			</Button>
 		</div>
 	</Imagem>
 );
 
-export default Banner;
+export default Hero;
