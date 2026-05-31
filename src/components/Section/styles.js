@@ -15,6 +15,11 @@ export const Container = styled.section`
 		line-height: 22px;
 		max-width: 640px;
 	}
+	
+	iframe {
+		border-radius: 8px;
+		border: 2px solid ${cores.branca};
+	}
 `;
 
 export const Title = styled.h2`

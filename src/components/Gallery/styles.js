@@ -5,8 +5,27 @@ export const Items = styled.ul`
 	display: flex;
 `;
 
+export const Action = styled.div`
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.7);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	opacity: 0;
+	border-radius: 8px;
+	
+	p {
+		cursor: pointer;
+	}
+`;
+
 export const Item = styled.li`
 	margin-right: 16px;
+	position: relative;
 	
 	img {
 		border: 2px solid ${cores.branca};
@@ -15,4 +34,64 @@ export const Item = styled.li`
 		width: 150px;
 		object-fit: cover;
 	}
+	
+	a {
+		text-decoration: none;
+		color: ${cores.branca};
+	}
+	
+	&:hover {
+		${Action} {
+			opacity: 1;
+		}
+	}
 `;
+
+export const Modal = styled.div`
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	display: none;
+	align-items: center;
+	justify-content: center;
+	
+	&.visible {
+		display: flex;
+	}
+	
+	.overlay {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background-color: rgba(0, 0, 0, 0.73);
+	}
+`;
+
+export const ModalContent = styled.div`
+	max-width: 960px;
+	position: relative;
+	z-index: 1;
+	
+	header {
+		display: flex;
+		justify-content: space-between;
+		margin-bottom: 8px;
+		
+		p {
+			cursor: pointer;	
+		}
+	}
+	
+	img {
+		display: block;
+		max-width: 100%;
+		border-radius: 8px;
+	}
+`;
+
+
+
