@@ -1,6 +1,7 @@
 import { useParams } from 'react-router-dom'
 import Hero from '../../components/Hero'
 import Section from '../../components/Section'
+import Gallery from '../../components/Gallery'
 
 const Product = () => {
 	
@@ -11,6 +12,7 @@ const Product = () => {
 			<Hero />
 			<Section title='Sobre o jogo' background='black'>
 				<p>
+					<h4>Product ID: {id}</h4>
 					Sleeping Dogs is a 2012 action-adventure game developed by United 
 					Front Games and published by Square Enix. The game was released for PlayStation 3, 
 					Windows, and Xbox 360 in August 2012. Set in contemporary Hong Kong, the story follows Wei Shen, 
@@ -24,11 +26,7 @@ const Product = () => {
 					Desenvolvedor: United Front Games
 				</p>
 			</Section>
-			<Section title='Galeria' background='black'>
-				<div>
-					fotos
-				</div>
-			</Section>
+			<Gallery />
 		</>
 	);
 }
