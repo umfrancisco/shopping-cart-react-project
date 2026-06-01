@@ -7,11 +7,13 @@ export const Card = styled.div`
 	border-radius: 8px;
 	padding: 8px;
 	position: relative;
+	margin-bottom: 24px;
 	
 	img {
-	  width: 100%;
-	  height: 320px;
-	  object-fit: cover;
+		display: block;
+		width: 100%;
+		height: 320px;
+		object-fit: cover;
 	}
 	
 	${TagContainer} {
@@ -34,7 +36,7 @@ export const Descricao = styled.p`
 	margin-top: 16px;
 `;
 
-export const Infos = styled.div`
+export const Tags = styled.div`
 	position: absolute;
 	top: 16px;
 	right: 16px;

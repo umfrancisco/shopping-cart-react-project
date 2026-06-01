@@ -9,12 +9,11 @@ const ProductsList = ({ title, background, games }) => (
 				{games.map(game => (
 					<Product 
 						key={game.id}
-						category={game.category} 
-						system={game.system} 
-						title={game.title} 
+						price={"R$ "+game.price}
+						name={game.name} 
 						description={game.description} 
-						image={game.image} 
-						infos={game.infos}
+						imageUrl={game.imageUrl}
+						platforms={game.platforms}
 					/>
 				))}
 			</List>

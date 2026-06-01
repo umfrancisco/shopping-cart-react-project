@@ -1,53 +1,40 @@
 import ProductsList from '../../components/ProductsList'
+import { useState, useEffect } from 'react'
 
-const data = [
-	{
-		id: 1,
-		category: "action",
-		system: "Windows",
-		title: "GTA IV",
-		description: "Game Desc",
-		image: "https://raw.githubusercontent.com/umfrancisco/shopping-cart-backend/refs/heads/main/images/gta-iv.png",
-		infos: ["-10%", "R$ 150.00"]
-	},
-	{
-		id: 2,
-		category: "adventure",
-		system: "Xbox 360",
-		title: "Skyrim",
-		description: "Game Desc",
-		image: "https://raw.githubusercontent.com/umfrancisco/shopping-cart-backend/refs/heads/main/images/skyrim.png",
-		infos: ["-10%", "R$ 150.00"]
-	},
-	{
-		id: 3,
-		category: "action",
-		system: "Windows",
-		title: "Batman Arkham Asylum",
-		description: "Game Desc",
-		image: "https://raw.githubusercontent.com/umfrancisco/shopping-cart-backend/refs/heads/main/images/batman.png",
-		infos: ["-10%", "R$ 150.00"]
-	},
-	{
-		id: 4,
-		category: "adventure",
-		system: "Xbox 360",
-		title: "Red Dead Redemption",
-		description: "Game Desc",
-		image: "https://raw.githubusercontent.com/umfrancisco/shopping-cart-backend/refs/heads/main/images/red-dead-redemption.png",
-		infos: ["-10%", "R$ 150.00"]
-	}
+const Categories = () => {
 	
-]
+	const [action, setAction] = useState([]);
+	const [adventure, setAdventure] = useState([]);
+	const [fantasy, setFantasy] = useState([]);
+	const [fps, setFps] = useState([]);
+	
+	useEffect(() => {
+		fetch('http://localhost:8080/api/game/category/action')
+			.then(res => res.json())
+			.then(res => setAction(res));
+			
+		fetch('http://localhost:8080/api/game/category/adventure')
+			.then(res => res.json())
+			.then(res => setAdventure(res));
+		
+		fetch('http://localhost:8080/api/game/category/fantasy')
+			.then(res => res.json())
+			.then(res => setFantasy(res));
 
-const Categories = () => (
-	<>
-		<ProductsList title="Ação" background="gray" games={data}/>		
-		<ProductsList title="Aventura" background="black" games={data}/>
-		<ProductsList title="Fantasia" background="gray" games={data}/>		
-		<ProductsList title="FPS" background="black" games={data}/>	
-	</>
-);
+		fetch('http://localhost:8080/api/game/category/fps')
+			.then(res => res.json())
+			.then(res => setFps(res));
+	}, []);
+	
+	return (
+		<>
+			<ProductsList title="Ação" background="gray" games={action}/>		
+			<ProductsList title="Aventura" background="black" games={adventure}/>
+			<ProductsList title="Fantasia" background="gray" games={fantasy}/>		
+			<ProductsList title="FPS" background="black" games={fps}/>
+		</>
+	);
+}
 
 export default Categories;
 
