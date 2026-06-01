@@ -7,9 +7,10 @@ const ProductsList = ({ title, background, games }) => (
 			<Title>{title}</Title>
 			<List>
 				{games.map(game => (
-					<Product 
+					<Product
 						key={game.id}
-						price={"R$ "+game.price}
+						id={game.id}
+						price={game.price}
 						name={game.name} 
 						description={game.description} 
 						imageUrl={game.imageUrl}

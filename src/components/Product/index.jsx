@@ -1,7 +1,8 @@
 import Tag from '../Tag'
-import { Card, Descricao, Titulo, Tags } from './styles'
+import { Card, Descricao, Titulo, Tags, Link } from './styles'
+import Button from '../Button'
 
-const Product = ({ name, price, description, platforms, imageUrl }) => {
+const Product = ({ id, name, price, description, platforms, imageUrl }) => {
 	
 	const getName = (name) => {
 		if (name.length > 20) {
@@ -17,6 +18,13 @@ const Product = ({ name, price, description, platforms, imageUrl }) => {
 		return description;
 	}
 	
+	const priceFormat = (price) => {
+		return new Intl.NumberFormat('pt-BR', {
+			style: 'currency',
+			currency: 'BRL'
+		}).format(price);
+	} 
+	
 	return (
 		<Card>
 			<img src={imageUrl} alt={name} />
@@ -24,8 +32,9 @@ const Product = ({ name, price, description, platforms, imageUrl }) => {
 				{platforms.map(platform => <Tag key={platform}>{platform}</Tag>)}
 			</Tags>
 			<Titulo>{getName(name)}</Titulo>
-			<Tag>{price}</Tag>
+			<Tag>{priceFormat(price)}</Tag>
 			<Descricao>{getDescription(description)}</Descricao>
+			<Link href={`/product/${id}`}>Mais detalhes</Link>
 		</Card>
 	);
 }

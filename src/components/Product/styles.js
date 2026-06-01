@@ -34,12 +34,22 @@ export const Descricao = styled.p`
 	line-height: 22px;
 	display: block;
 	margin-top: 16px;
+	margin-bottom: 32px;
 `;
 
 export const Tags = styled.div`
 	position: absolute;
 	top: 16px;
 	right: 16px;
+`;
+
+export const Link = styled.a`
+	position: absolute;
+	bottom: 0;
+	margin-bottom: 8px;
+	text-decoration: none;
+	color: ${cores.branca};
+	font-size: 14px;
 `;
 
 

@@ -14,6 +14,13 @@ const Banner = () => {
 			.then(res => setGame(res));
 	}, []);
 	
+	const priceFormat = (price) => {
+		return new Intl.NumberFormat('pt-BR', {
+			style: 'currency',
+			currency: 'BRL'
+		}).format(price);
+	} 
+	
 	return (
 		<Imagem style={{ backgroundImage: `url(${bannerImg})` }}>
 			<div className='container'>
@@ -24,10 +31,10 @@ const Banner = () => {
 						alt="destaque"/>
 					<Titulo>{game.name}</Titulo>
 					<Precos>
-						Por R$ {game.price}
+						Por {priceFormat(game.price)}
 					</Precos>
 				</div>
-				<Button type="link" to='/product/1' title='Clique aqui'>
+				<Button type="link" to={`/product/${game.id}`} title='Clique aqui'>
 					Veja a oferta
 				</Button>
 			</div>
