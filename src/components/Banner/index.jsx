@@ -5,8 +5,9 @@ import bannerImg from '../../assets/images/mfakurian_black.jpg'
 import Button from '../Button'
 
 const Banner = () => {
-	const [game, setGame] = useState([]);
 	
+	const [game, setGame] = useState([]);
+
 	useEffect(() => {
 		
 		fetch('http://localhost:8080/api/game/2')
