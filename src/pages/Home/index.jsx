@@ -6,7 +6,7 @@ const Home = () => {
 	
 	const [data, setData] = useState([]);
 	useEffect(() => {
-		fetch('http://localhost:8080/api/game')
+		fetch('http://localhost:8080/api/game/category/action')
 			.then(res => res.json())
 			.then(res => setData(res));
 	}, []);

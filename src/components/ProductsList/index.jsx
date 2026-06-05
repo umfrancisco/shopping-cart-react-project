@@ -12,7 +12,7 @@ const ProductsList = ({ title, background, games }) => (
 						id={game.id}
 						price={game.price}
 						name={game.name} 
-						description={game.description} 
+						shortDescription={game.shortDescription} 
 						imageUrl={game.imageUrl}
 						platforms={game.platforms}
 					/>

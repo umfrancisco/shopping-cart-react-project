@@ -4,7 +4,7 @@ const Footer = () => (
 	<Container>
 		<div className='container'>
 			<FooterSection>
-				<SectionTitle>Categorias</SectionTitle>
+				<SectionTitle>Games</SectionTitle>
 				<Links>
 					<li>
 						<Link>Ação</Link>
@@ -17,6 +17,18 @@ const Footer = () => (
 					</li>
 					<li>
 						<Link>FPS</Link>
+					</li>
+				</Links>
+				<SectionTitle>Hardware</SectionTitle>
+				<Links>
+					<li>
+						<Link>Desktop</Link>
+					</li>
+					<li>
+						<Link>Notebook</Link>
+					</li>
+					<li>
+						<Link>Periféricos</Link>
 					</li>
 				</Links>
 			</FooterSection>

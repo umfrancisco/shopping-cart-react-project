@@ -1,7 +1,7 @@
 import Tag from '../Tag'
 import { Card, Descricao, Titulo, Tags } from './styles'
 
-const Product = ({ id, name, price, description, platforms, imageUrl }) => {
+const Product = ({ id, name, price, shortDescription, longDescription, platforms, imageUrl }) => {
 	
 	const getName = (name) => {
 		if (name.length > 20) {
@@ -10,11 +10,11 @@ const Product = ({ id, name, price, description, platforms, imageUrl }) => {
 		return name;
 	}
 	
-	const getDescription = (description) => {
-		if (description.length > 95) {
-			return description.slice(0, 92) + ' ...';
+	const getDescription = (shortDescription) => {
+		if (shortDescription.length > 95) {
+			return shortDescription.slice(0, 92) + ' ...';
 		}
-		return description;
+		return shortDescription;
 	}
 	
 	const priceFormat = (price) => {
@@ -32,7 +32,7 @@ const Product = ({ id, name, price, description, platforms, imageUrl }) => {
 			</Tags>
 			<Titulo>{getName(name)}</Titulo>
 			<Tag>{priceFormat(price)}</Tag>
-			<Descricao>{getDescription(description)}</Descricao>
+			<Descricao>{getDescription(shortDescription)}</Descricao>
 		</Card>
 	);
 }

@@ -10,7 +10,7 @@ const Product = () => {
 	
 	const [game, setGame] = useState([]);
 	useEffect(() => {
-		fetch(`http://localhost:8080/api/game/id/${id}`)
+		fetch(`http://localhost:8080/api/game/${id}`)
 			.then(res => res.json())
 			.then(res => setGame(res));
 	}, []);
@@ -19,7 +19,7 @@ const Product = () => {
 		<>	
 			<Hero game={game}/>
 			<Section title={'Sobre o jogo'} background='black'>
-				<p>{game.description}</p>
+				<p>{game.longDescription}</p>
 				<br/>
 				<h4>Disponível para</h4>
 				<br/>

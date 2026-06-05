@@ -9,7 +9,7 @@ const Banner = () => {
 	
 	useEffect(() => {
 		
-		fetch('http://localhost:8080/api/game/id/10')
+		fetch('http://localhost:8080/api/game/2')
 			.then(res => res.json())
 			.then(res => setGame(res));
 	}, []);
