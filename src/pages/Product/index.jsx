@@ -29,7 +29,6 @@ const Product = () => {
 					)}
 				</p>
 			</Section>
-			<Gallery />
 		</>
 	);
 }

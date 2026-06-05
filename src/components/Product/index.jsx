@@ -1,6 +1,5 @@
 import Tag from '../Tag'
-import { Card, Descricao, Titulo, Tags, Link } from './styles'
-import Button from '../Button'
+import { Card, Descricao, Titulo, Tags } from './styles'
 
 const Product = ({ id, name, price, description, platforms, imageUrl }) => {
 	
@@ -26,7 +25,7 @@ const Product = ({ id, name, price, description, platforms, imageUrl }) => {
 	} 
 	
 	return (
-		<Card>
+		<Card to={`/product/${id}`}>
 			<img src={imageUrl} alt={name} />
 			<Tags>
 				{platforms.map(platform => <Tag key={platform}>{platform}</Tag>)}
@@ -34,7 +33,6 @@ const Product = ({ id, name, price, description, platforms, imageUrl }) => {
 			<Titulo>{getName(name)}</Titulo>
 			<Tag>{priceFormat(price)}</Tag>
 			<Descricao>{getDescription(description)}</Descricao>
-			<Link href={`/product/${id}`}>Mais detalhes</Link>
 		</Card>
 	);
 }
