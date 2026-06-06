@@ -13,7 +13,7 @@ const Product = () => {
 	  getProductById(id)
 	    .then(setProduct)
 	    .catch(console.error);
-	}, []);
+	}, [id]);
 	
 	return (
 		<>	

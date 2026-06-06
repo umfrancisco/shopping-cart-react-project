@@ -1,7 +1,7 @@
 import Tag from '../Tag'
 import { Card, Descricao, Titulo, Tags } from './styles'
 
-const Product = ({ id, name, price, shortDescription, longDescription, platforms, imageUrl }) => {
+const Product = ({ id, name, price, shortDescription, longDescription, platforms, imageUrl, game }) => {
 	
 	const getName = (name) => {
 		if (name.length > 20) {

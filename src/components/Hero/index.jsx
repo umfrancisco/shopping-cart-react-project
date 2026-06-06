@@ -1,15 +1,18 @@
 import { Imagem, Titulo, Precos } from '../Banner/styles'
 import bannerImg from '../../assets/images/mfakurian_black.jpg'
-import Button from '../Button'
+import { ButtonContainer } from '../Button/styles'
+import { useCart } from '../../context/CartContext'
 
 const Hero = ({ game }) => {
+	
+	const { addToCart } = useCart();
 	
 	const priceFormat = (price) => {
 		return new Intl.NumberFormat('pt-BR', {
 			style: 'currency',
 			currency: 'BRL'
 		}).format(price);
-	} 
+	}
 	
 	return (
 		<Imagem style={{ backgroundImage: `url(${bannerImg})` }}>
@@ -23,9 +26,10 @@ const Hero = ({ game }) => {
 						Por {priceFormat(game.price)}
 					</Precos>
 				</div>
-				<Button type="link" to='/aasd' title='Clique aqui'>
+				<p id="message"></p>
+				<ButtonContainer onClick={() => addToCart(game)}>
 					Adicionar ao carrinho
-				</Button>
+				</ButtonContainer>
 			</div>
 		</Imagem>
 	);

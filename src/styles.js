@@ -27,5 +27,15 @@ export const GlobalCss = createGlobalStyle`
 		width: 100%;
 		margin: 0 auto;
 	}
+	
+	.cart {
+		max-width: 1024px;
+		width: 100%;
+		margin: 16px auto;
+		
+		h2, div, p {
+			margin: 16px 0;
+		}
+	}
 `;
 

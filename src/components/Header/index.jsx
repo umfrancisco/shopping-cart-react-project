@@ -21,9 +21,11 @@ const Header = () => (
 				</Links>
 			</nav>
 		</div>
-		<LinkCart href="/carrinho">
+		<LinkCart>
 			0 - produto(s)
-			<img src={carrinho} alt="carrinho icone" />
+			<Link to="/cart">
+				<img src={carrinho} alt="carrinho icone" />
+			</Link>
 		</LinkCart>
 	</HeaderBar>
 );
