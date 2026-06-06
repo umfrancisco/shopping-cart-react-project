@@ -6,7 +6,7 @@ export const useCart = () => useContext(CartContext);
 
 export const CartProvider = ({ children }) => {
   const [cart, setCart] = useState([]);
-
+  
   const addToCart = (product) => {
     setCart((prev) => {
 		
@@ -14,13 +14,13 @@ export const CartProvider = ({ children }) => {
 
       if (exists) {
 		const message = document.getElementById("message");
-		if (message) message.textContent = "Você já adicionou este item!";
+		if (message) message.textContent = "Você já adicionou este item";
 
-		return prev; 
+		return prev;
       }
 	  
 	  const message = document.getElementById("message");
-	  message.textContent = "Item adicionado ao carrinho!";
+	  message.textContent = "Item adicionado ao carrinho";
 	  
       return [...prev, { ...product, quantity: 1 }];
     });
@@ -28,13 +28,17 @@ export const CartProvider = ({ children }) => {
   
   const addOneToCart = (id) => {
     setCart((prev) =>
-      prev
-        .map((item) =>
-          item.id === id
-            ? { ...item, quantity: item.quantity + 1 }
-            : item
-        )
-        .filter((item) => item.quantity > 0)
+      prev.map((item) => {
+        if (item.id === id) {
+          if (item.quantity >= item.stock) {
+			alert(`Limite máximo de '${item.name}' atingido`);
+            return item;
+          }
+          return { ...item, quantity: item.quantity + 1 };
+        }
+
+        return item;
+      })
     );
   };
 
