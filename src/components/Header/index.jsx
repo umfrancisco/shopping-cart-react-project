@@ -22,7 +22,6 @@ const Header = () => (
 			</nav>
 		</div>
 		<LinkCart>
-			0 - produto(s)
 			<Link to="/cart">
 				<img src={carrinho} alt="carrinho icone" />
 			</Link>
