@@ -1,30 +1,30 @@
 import Hero from '../../components/Hero'
 import Section from '../../components/Section'
-import Gallery from '../../components/Gallery'
 import { useParams } from 'react-router-dom'
 import { useState, useEffect } from 'react'
+import { getProductById } from '../../api/productService'
 
 const Product = () => {
 	
 	const { id } = useParams();
 	
-	const [game, setGame] = useState([]);
+	const [product, setProduct] = useState([]);
 	useEffect(() => {
-		fetch(`http://localhost:8080/api/game/${id}`)
-			.then(res => res.json())
-			.then(res => setGame(res));
+	  getProductById(id)
+	    .then(setProduct)
+	    .catch(console.error);
 	}, []);
 	
 	return (
 		<>	
-			<Hero game={game}/>
+			<Hero game={product}/>
 			<Section title={'Sobre o jogo'} background='black'>
-				<p>{game.longDescription}</p>
+				<p>{product.longDescription}</p>
 				<br/>
 				<h4>Disponível para</h4>
 				<br/>
 				<p>
-					{game.platforms?.map(
+					{product.platforms?.map(
 						(platform) => (<span key={platform}>{platform}<br /></span>)
 					)}
 				</p>

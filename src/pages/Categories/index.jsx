@@ -1,5 +1,6 @@
 import ProductsList from '../../components/ProductsList'
 import { useState, useEffect } from 'react'
+import { getProductsByCategory } from '../../api/productService'
 
 const Categories = () => {
 	
@@ -9,21 +10,18 @@ const Categories = () => {
 	const [fps, setFps] = useState([]);
 	
 	useEffect(() => {
-		fetch('http://localhost:8080/api/game/category/action')
-			.then(res => res.json())
-			.then(res => setAction(res));
-			
-		fetch('http://localhost:8080/api/game/category/adventure')
-			.then(res => res.json())
-			.then(res => setAdventure(res));
-		
-		fetch('http://localhost:8080/api/game/category/fantasy')
-			.then(res => res.json())
-			.then(res => setFantasy(res));
-
-		fetch('http://localhost:8080/api/game/category/fps')
-			.then(res => res.json())
-			.then(res => setFps(res));
+	  getProductsByCategory("action")
+	    .then(setAction)
+	    .catch(console.error);
+	  getProductsByCategory("adventure")
+	    .then(setAdventure)
+	    .catch(console.error);
+	  getProductsByCategory("fantasy")
+	    .then(setFantasy)
+	    .catch(console.error);
+	  getProductsByCategory("fps")
+		 .then(setFps)
+		 .catch(console.error);
 	}, []);
 	
 	return (

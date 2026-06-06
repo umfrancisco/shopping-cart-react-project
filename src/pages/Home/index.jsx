@@ -1,20 +1,22 @@
 import Banner from '../../components/Banner'
 import ProductsList from '../../components/ProductsList'
 import { useState, useEffect } from 'react'
+import { getProductsByCategory } from '../../api/productService'
 
 const Home = () => {
 	
-	const [data, setData] = useState([]);
+	const [products, setProducts] = useState([]);
+
 	useEffect(() => {
-		fetch('http://localhost:8080/api/game/category/action')
-			.then(res => res.json())
-			.then(res => setData(res));
+	  getProductsByCategory("action")
+	    .then(setProducts)
+	    .catch(console.error);
 	}, []);
 	
 	return (
 		<>
 			<Banner />
-			<ProductsList title="Em destaque" background="black" games={data}/>
+			<ProductsList title="Em destaque" background="black" games={products}/>
 		</>
 	);
 }

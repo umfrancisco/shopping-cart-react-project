@@ -3,16 +3,16 @@ import { Imagem, Titulo, Precos } from './styles'
 import Tag from '../Tag'
 import bannerImg from '../../assets/images/mfakurian_black.jpg'
 import Button from '../Button'
+import { getProductById } from '../../api/productService'
 
 const Banner = () => {
-	
-	const [game, setGame] = useState([]);
 
+	const [product, setProduct] = useState([]);
+	
 	useEffect(() => {
-		
-		fetch('http://localhost:8080/api/game/2')
-			.then(res => res.json())
-			.then(res => setGame(res));
+	  getProductById(2)
+	    .then(setProduct)
+	    .catch(console.error);
 	}, []);
 	
 	const priceFormat = (price) => {
@@ -28,14 +28,14 @@ const Banner = () => {
 				<Tag size='big'>Destaque do dia</Tag>
 				<div>
 					<img 
-						src={game.imageUrl} 
+						src={product.imageUrl} 
 						alt="destaque"/>
-					<Titulo>{game.name}</Titulo>
+					<Titulo>{product.name}</Titulo>
 					<Precos>
-						Por {priceFormat(game.price)}
+						Por {priceFormat(product.price)}
 					</Precos>
 				</div>
-				<Button type="link" to={`/product/${game.id}`} title='Clique aqui'>
+				<Button type="link" to={`/product/${product.id}`} title='Clique aqui'>
 					Veja a oferta
 				</Button>
 			</div>
