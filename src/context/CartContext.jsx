@@ -7,6 +7,34 @@ export const useCart = () => useContext(CartContext);
 export const CartProvider = ({ children }) => {
   const [cart, setCart] = useState([]);
   
+  const confirmPurchase = () => {
+    if (cart.length === 0) {
+      alert("Seu carrinho está vazio!");
+      return;
+    }
+
+    const total = getTotal();
+
+    const confirmed = window.confirm(
+      `Total da compra: R$ ${total.toFixed(2)}\nDeseja finalizar a compra?`
+    );
+
+    if (!confirmed) return;
+	
+	const reducedCart = cart.map((item) => ({
+	  id: item.id,
+	  price: item.price,
+	  quantity: item.quantity,
+	}));
+	
+	// axios put
+	
+	console.log("Compra realizada:", reducedCart);
+    alert("Compra realizada com sucesso!");
+
+    setCart([]);
+  };
+  
   const addToCart = (product) => {
     setCart((prev) => {
 		
@@ -36,7 +64,6 @@ export const CartProvider = ({ children }) => {
           }
           return { ...item, quantity: item.quantity + 1 };
         }
-
         return item;
       })
     );
@@ -62,7 +89,7 @@ export const CartProvider = ({ children }) => {
   };
 
   return (
-    <CartContext.Provider value={{ cart, addToCart, addOneToCart, removeFromCart, getTotal }}>
+    <CartContext.Provider value={{ cart, addToCart, addOneToCart, removeFromCart, getTotal, confirmPurchase }}>
       {children}
     </CartContext.Provider>
   );

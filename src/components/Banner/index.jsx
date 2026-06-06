@@ -17,7 +17,7 @@ const Banner = () => {
 	
 	const priceFormat = (price) => {
 		if (price === undefined) {
-			return "$$";
+			return "";
 		}
 		return new Intl.NumberFormat('pt-BR', {
 			style: 'currency',

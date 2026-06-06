@@ -3,7 +3,7 @@ import { ButtonContainer } from '../../components/Button/styles'
 
 const Cart = () => {
 	
-	const { cart, addOneToCart, removeFromCart, getTotal } = useCart();
+	const { cart, addOneToCart, removeFromCart, getTotal, confirmPurchase } = useCart();
 	
 	const priceFormat = (price) => {
 		return new Intl.NumberFormat('pt-BR', {
@@ -33,6 +33,8 @@ const Cart = () => {
 		     </div>
 		   ))}
 		   <h3>Total: {priceFormat(getTotal())}</h3>
+		   <br />
+		   <ButtonContainer onClick={confirmPurchase}>Confirmar compra</ButtonContainer>
 		 </div>
 	);
 }
