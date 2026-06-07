@@ -12,6 +12,9 @@ export const getProductsByCategory = (category) => apiService.get(`/game/categor
 // POST create product
 export const createProduct = (product) => apiService.post("/game", product);
 
+// POST create cart
+export const createCart = (cart) => apiService.post("/cart", cart);
+
 // PUT update product
 export const updateProduct = (id, product) => apiService.put(`/game/${id}`, product);
 

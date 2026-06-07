@@ -7,12 +7,12 @@ import { getProductById } from '../../api/productService'
 
 const Banner = () => {
 
-	const [product, setProduct] = useState([]);
+	const [product, setProduct] = useState(null);
 	
 	useEffect(() => {
 	  getProductById(2)
 	    .then(setProduct)
-	    .catch(console.error);
+	    .catch(console.error)
 	}, []);
 	
 	const priceFormat = (price) => {
@@ -23,7 +23,17 @@ const Banner = () => {
 			style: 'currency',
 			currency: 'BRL'
 		}).format(price);
-	} 
+	}
+	
+	if (product == null) {
+		return (
+		  <Imagem style={{ backgroundImage: `url(${bannerImg})` }}>
+		    <div className='container'>
+		      <p>Carregando produto...</p>
+		    </div>
+		  </Imagem>
+		)
+	}
 	
 	return (
 		<Imagem style={{ backgroundImage: `url(${bannerImg})` }}>

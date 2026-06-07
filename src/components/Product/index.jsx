@@ -1,7 +1,7 @@
 import Tag from '../Tag'
 import { Card, Descricao, Titulo, Tags } from './styles'
 
-const Product = ({ id, name, price, shortDescription, longDescription, platforms, imageUrl, game }) => {
+const Product = ({ id, name, price, shortDescription, longDescription, platforms, imageUrl, stock, game }) => {
 	
 	const getName = (name) => {
 		if (name.length > 20) {
@@ -22,7 +22,17 @@ const Product = ({ id, name, price, shortDescription, longDescription, platforms
 			style: 'currency',
 			currency: 'BRL'
 		}).format(price);
-	} 
+	}
+	
+	if (stock === 0) {
+		return (
+			<Card>
+				<img style={{filter: "grayscale(100%)"}} src={imageUrl} alt={name} />
+				<Titulo>{getName(name)}</Titulo>
+				<Descricao>Produto indisponível no momento...</Descricao>
+			</Card>
+		)
+	}
 	
 	return (
 		<Card to={`/product/${id}`}>

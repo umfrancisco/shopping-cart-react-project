@@ -14,6 +14,7 @@ const ProductsList = ({ title, background, games }) => (
 						name={game.name} 
 						shortDescription={game.shortDescription} 
 						imageUrl={game.imageUrl}
+						stock={game.stock}
 						platforms={game.platforms}
 					/>
 				))}

@@ -1,4 +1,5 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useState } from 'react'
+import { createCart } from '../api/productService'
 
 const CartContext = createContext();
 
@@ -7,7 +8,7 @@ export const useCart = () => useContext(CartContext);
 export const CartProvider = ({ children }) => {
   const [cart, setCart] = useState([]);
   
-  const confirmPurchase = () => {
+  const confirmPurchase = async () => {
     if (cart.length === 0) {
       alert("Seu carrinho está vazio!");
       return;
@@ -28,11 +29,18 @@ export const CartProvider = ({ children }) => {
 	}));
 	
 	// axios put
-	
-	console.log("Compra realizada:", reducedCart);
-    alert("Compra realizada com sucesso!");
+	try {
+	  const response = await createCart(reducedCart);
 
-    setCart([]);
+	  console.log("Resposta da API:", response.data);
+	  console.log("Compra realizada:", reducedCart);
+
+	  alert("Compra realizada com sucesso!");
+	  setCart([]);
+	} catch (error) {
+	  console.error("Erro ao finalizar compra:", error);
+	  alert("Erro ao finalizar compra");
+	}
   };
   
   const addToCart = (product) => {
