@@ -1,33 +1,21 @@
 import ProductsList from '../../components/ProductsList'
 import { useState, useEffect } from 'react'
-import { getProductsByCategory } from '../../api/productService'
+import { getHardwares } from '../../api/productService'
 
 const Hardware = () => {
 	
-	const [action, setAction] = useState([]);
-	const [adventure, setAdventure] = useState([]);
-	const [fantasy, setFantasy] = useState([]);
-	const [fps, setFps] = useState([]);
+	const [hardwares, setHardwares] = useState([]);
 	
 	useEffect(() => {
-	  getProductsByCategory("action")
-	    .then(setAction)
+	  getHardwares()
+	    .then(setHardwares)
 	    .catch(console.error);
-	  getProductsByCategory("adventure")
-	    .then(setAdventure)
-	    .catch(console.error);
-	  getProductsByCategory("fantasy")
-	    .then(setFantasy)
-	    .catch(console.error);
-	  getProductsByCategory("fps")
-		 .then(setFps)
-		 .catch(console.error);
 	}, []);
 	
 	return (
 		<>
-			<ProductsList title="Computadores" background="gray" products={adventure} type='hardware' />
-			<ProductsList title="Periféricos" background="black" products={fantasy} type='hardware' />
+			<ProductsList title="Computadores" background="gray" products={hardwares} type='hardware' />
+			<ProductsList title="Periféricos" background="black" products={hardwares} type='hardware' />
 		</>
 	);
 }

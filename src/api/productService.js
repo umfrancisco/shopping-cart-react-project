@@ -2,6 +2,7 @@ import { apiService } from "./api";
 
 // GET all products
 export const getProducts = () => apiService.get("/game");
+export const getHardwares = () => apiService.get("/hardware");
 
 // GET single product
 export const getProductById = (id) => apiService.get(`/game/${id}`);
