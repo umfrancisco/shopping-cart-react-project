@@ -2,7 +2,7 @@ import ProductsList from '../../components/ProductsList'
 import { useState, useEffect } from 'react'
 import { getProductsByCategory } from '../../api/productService'
 
-const Categories = () => {
+const Games = () => {
 	
 	const [action, setAction] = useState([]);
 	const [adventure, setAdventure] = useState([]);
@@ -34,5 +34,5 @@ const Categories = () => {
 	);
 }
 
-export default Categories;
+export default Games;
 

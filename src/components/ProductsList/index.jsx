@@ -9,15 +9,15 @@ const ProductsList = ({ title, background, products, type }) => {
 				<div className='container'>
 					<Title>{title}</Title>
 					<HardwareList>
-						{products.map(game => (
+						{products.map(product => (
 							<Product
-								key={game.id}
-								id={game.id}
-								price={game.price}
-								name={game.name}
-								description={game.description} 
-								imageUrl={game.imageUrl}
-								stock={game.stock}
+								key={product.id}
+								id={product.id}
+								price={product.price}
+								name={product.name}
+								description={product.description} 
+								imageUrl={product.imageUrl}
+								stock={product.stock}
 								type='hardware'
 							/>
 						))}
@@ -32,16 +32,16 @@ const ProductsList = ({ title, background, products, type }) => {
 			<div className='container'>
 				<Title>{title}</Title>
 				<GamesList>
-					{products.map(game => (
+					{products.map(product => (
 						<Product
-							key={game.id}
-							id={game.id}
-							price={game.price}
-							name={game.name} 
-							description={game.description} 
-							imageUrl={game.imageUrl}
-							stock={game.stock}
-							platforms={game.platforms}
+							key={product.id}
+							id={product.id}
+							price={product.price}
+							name={product.name} 
+							description={product.description} 
+							imageUrl={product.imageUrl}
+							stock={product.stock}
+							platforms={product.platforms}
 						/>
 					))}
 				</GamesList>

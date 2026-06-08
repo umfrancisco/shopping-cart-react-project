@@ -20,7 +20,7 @@ export const GamesList = styled.ul`
 
 export const HardwareList = styled.ul`
 	display: grid;
-	grid-template-columns: repeat(2, minmax(200px, 1fr));
+	grid-template-columns: repeat(3, minmax(200px, 1fr));
 	gap: 24px;
 	margin-top: 40px;
 `;

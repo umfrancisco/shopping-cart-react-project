@@ -3,7 +3,7 @@ import bannerImg from '../../assets/images/mfakurian_black.jpg'
 import { ButtonContainer } from '../Button/styles'
 import { useCart } from '../../context/CartContext'
 
-const Hero = ({ game }) => {
+const Hero = ({ product }) => {
 	
 	const { addToCart } = useCart();
 	
@@ -19,15 +19,15 @@ const Hero = ({ game }) => {
 			<div className='container'>
 				<div>
 					<img 
-						src={game.imageUrl} 
-						alt={game.name}/>
-					<Titulo>{game.name}</Titulo>
+						src={product.imageUrl} 
+						alt={product.name}/>
+					<Titulo>{product.name}</Titulo>
 					<Precos>
-						Por {priceFormat(game.price)}
+						Por {priceFormat(product.price)}
 					</Precos>
 				</div>
 				<p id="message"></p>
-				<ButtonContainer onClick={() => addToCart(game)}>
+				<ButtonContainer onClick={() => addToCart(product)}>
 					Adicionar ao carrinho
 				</ButtonContainer>
 			</div>

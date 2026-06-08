@@ -1,23 +1,22 @@
 import { apiService } from "./api";
 
 // GET all products
-export const getProducts = () => apiService.get("/game");
-export const getHardwares = () => apiService.get("/hardware");
+export const getProducts = () => apiService.get("/product");
 
 // GET single product
-export const getProductById = (id) => apiService.get(`/game/${id}`);
+export const getProductById = (id) => apiService.get(`/product/${id}`);
 
 // GET products by category
-export const getProductsByCategory = (category) => apiService.get(`/game/category/${category}`);
+export const getProductsByCategory = (category) => apiService.get(`/product/category/${category}`);
 
 // POST create product
-export const createProduct = (product) => apiService.post("/game", product);
+export const createProduct = (product) => apiService.post("/product", product);
 
 // POST create cart
 export const createCart = (cart) => apiService.post("/cart", cart);
 
 // PUT update product
-export const updateProduct = (id, product) => apiService.put(`/game/${id}`, product);
+export const updateProduct = (id, product) => apiService.put(`/product/${id}`, product);
 
 // DELETE product
-export const deleteProduct = (id) => apiService.delete(`/game/${id}`);
+export const deleteProduct = (id) => apiService.delete(`/product/${id}`);
