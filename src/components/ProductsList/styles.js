@@ -11,9 +11,16 @@ export const Container = styled.section`
 	}
 `;
 
-export const List = styled.ul`
+export const GamesList = styled.ul`
 	display: grid;
 	grid-template-columns: repeat(4, minmax(200px, 1fr));
+	gap: 24px;
+	margin-top: 40px;
+`;
+
+export const HardwareList = styled.ul`
+	display: grid;
+	grid-template-columns: repeat(3, minmax(200px, 1fr));
 	gap: 24px;
 	margin-top: 40px;
 `;

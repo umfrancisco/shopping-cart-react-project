@@ -2,7 +2,7 @@ import ProductsList from '../../components/ProductsList'
 import { useState, useEffect } from 'react'
 import { getProductsByCategory } from '../../api/productService'
 
-const Categories = () => {
+const Hardware = () => {
 	
 	const [action, setAction] = useState([]);
 	const [adventure, setAdventure] = useState([]);
@@ -26,13 +26,11 @@ const Categories = () => {
 	
 	return (
 		<>
-			<ProductsList title="Ação" background="gray" products={action} />		
-			<ProductsList title="Aventura" background="black" products={adventure}/>
-			<ProductsList title="Fantasia" background="gray" products={fantasy}/>		
-			<ProductsList title="FPS" background="black" products={fps}/>
+			<ProductsList title="Computadores" background="gray" products={adventure} type='hardware' />
+			<ProductsList title="Periféricos" background="black" products={fantasy} type='hardware' />
 		</>
 	);
 }
 
-export default Categories;
+export default Hardware;
 

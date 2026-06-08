@@ -22,10 +22,7 @@ const Footer = () => (
 				<SectionTitle>Hardware</SectionTitle>
 				<Links>
 					<li>
-						<Link>Desktop</Link>
-					</li>
-					<li>
-						<Link>Notebook</Link>
+						<Link>Computadores</Link>
 					</li>
 					<li>
 						<Link>Periféricos</Link>

@@ -1,7 +1,7 @@
 import Tag from '../Tag'
 import { Card, Descricao, Titulo, Tags } from './styles'
 
-const Product = ({ id, name, price, description, longDescription, platforms, imageUrl, stock, game }) => {
+const Product = ({ id, name, price, description, longDescription, platforms, imageUrl, stock, game, type }) => {
 	
 	const getName = (name) => {
 		if (name.length > 20) {
@@ -32,6 +32,17 @@ const Product = ({ id, name, price, description, longDescription, platforms, ima
 				<Descricao>Produto indisponível no momento...</Descricao>
 			</Card>
 		)
+	}
+	
+	if (type === 'hardware') {
+		return (
+			<Card to={`/product/${id}`}>
+				<img src={imageUrl} alt={name} />
+				<Titulo>{getName(name)}</Titulo>
+				<Tag>{priceFormat(price)}</Tag>
+				<Descricao>{getDescription(description)}</Descricao>
+			</Card>
+		);
 	}
 	
 	return (

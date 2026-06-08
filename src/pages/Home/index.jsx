@@ -16,7 +16,7 @@ const Home = () => {
 	return (
 		<>
 			<Banner />
-			<ProductsList title="Em destaque" background="black" games={products}/>
+			<ProductsList title="Em destaque" background="black" products={products}/>
 		</>
 	);
 }
