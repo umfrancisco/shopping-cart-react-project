@@ -1,7 +1,7 @@
 import Tag from '../Tag'
 import { Card, Descricao, Titulo, Tags } from './styles'
 
-const Product = ({ id, name, price, shortDescription, longDescription, platforms, imageUrl, stock, game }) => {
+const Product = ({ id, name, price, description, longDescription, platforms, imageUrl, stock, game }) => {
 	
 	const getName = (name) => {
 		if (name.length > 20) {
@@ -10,11 +10,11 @@ const Product = ({ id, name, price, shortDescription, longDescription, platforms
 		return name;
 	}
 	
-	const getDescription = (shortDescription) => {
-		if (shortDescription.length > 95) {
-			return shortDescription.slice(0, 92) + ' ...';
+	const getDescription = (description) => {
+		if (description.length > 95) {
+			return description.slice(0, 92) + ' ...';
 		}
-		return shortDescription;
+		return description;
 	}
 	
 	const priceFormat = (price) => {
@@ -42,7 +42,7 @@ const Product = ({ id, name, price, shortDescription, longDescription, platforms
 			</Tags>
 			<Titulo>{getName(name)}</Titulo>
 			<Tag>{priceFormat(price)}</Tag>
-			<Descricao>{getDescription(shortDescription)}</Descricao>
+			<Descricao>{getDescription(description)}</Descricao>
 		</Card>
 	);
 }
