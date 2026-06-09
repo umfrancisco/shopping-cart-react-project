@@ -37,6 +37,7 @@ export const CartProvider = ({ children }) => {
 
 	  alert("Compra realizada com sucesso!");
 	  setCart([]);
+	  window.location.reload();
 	} catch (error) {
 	  console.error("Erro ao finalizar compra:", error);
 	  alert("Erro ao finalizar compra");

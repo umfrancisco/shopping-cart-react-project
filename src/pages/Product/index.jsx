@@ -15,11 +15,11 @@ const Product = () => {
 	    .catch(console.error);
 	}, [id]);
 	
-	if (product.category === 'notebook') {
+	if (product.category === 'notebook' || product.category === 'peripheral') {
 		return (
 			<>	
 				<Hero product={product}/>
-				<Section title={'Sobre o notebook'} background='black'>
+				<Section title={'Saiba mais'} background='black'>
 					<p>{product.description}</p>
 					<br/>
 				</Section>
@@ -30,7 +30,7 @@ const Product = () => {
 	return (
 		<>	
 			<Hero product={product}/>
-			<Section title={'Sobre o jogo'} background='black'>
+			<Section title={'Saiba mais'} background='black'>
 				<p>{product.longDescription}</p>
 				<br/>
 				<h4>Disponível para</h4>

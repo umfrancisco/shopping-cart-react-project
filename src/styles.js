@@ -32,6 +32,7 @@ export const GlobalCss = createGlobalStyle`
 		max-width: 1024px;
 		width: 100%;
 		margin: 16px auto;
+		padding-top: 32px;
 		
 		h2, div, p {
 			margin: 16px 0;
