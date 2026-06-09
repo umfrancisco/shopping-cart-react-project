@@ -54,12 +54,12 @@ const Cart = () => {
 		         {item.name} (x{item.quantity}) <br />
 		         {priceFormat(item.price * item.quantity)}
 		       </p>
-		       <ButtonContainer onClick={() => removeFromCart(item.id)}>
-		         -
-		       </ButtonContainer>
 			   <ButtonContainer onClick={() => addOneToCart(item.id)}>
-			     +
+			     Adicionar
 			   </ButtonContainer>
+		       <ButtonContainer onClick={() => removeFromCart(item.id)}>
+		         Remover
+		       </ButtonContainer>
 		     </div>
 		   ))}
 		   <h3>Total: {priceFormat(getTotal())}</h3>

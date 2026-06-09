@@ -9,6 +9,9 @@ export const getProductById = (id) => apiService.get(`/product/${id}`);
 // GET products by category
 export const getProductsByCategory = (category) => apiService.get(`/product/category/${category}`);
 
+// GET product to banner if stock not zero
+export const getBannerProduct = () => apiService.get("/product/banner");
+
 // POST create product
 export const createProduct = (product) => apiService.post("/product", product);
 

@@ -29,7 +29,7 @@ const Product = ({ id, name, price, description, longDescription, platforms, ima
 			<Card>
 				<img style={{filter: "grayscale(100%)"}} src={imageUrl} alt={name} />
 				<Titulo>{getName(name)}</Titulo>
-				<Descricao>Produto indisponível no momento...</Descricao>
+				<Descricao>Produto indisponível no momento</Descricao>
 			</Card>
 		)
 	}

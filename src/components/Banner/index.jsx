@@ -3,14 +3,14 @@ import { Imagem, Titulo, Precos } from './styles'
 import Tag from '../Tag'
 import bannerImg from '../../assets/images/mfakurian_black.jpg'
 import Button from '../Button'
-import { getProductById } from '../../api/productService'
+import { getBannerProduct } from '../../api/productService'
 
 const Banner = () => {
 
 	const [product, setProduct] = useState(null);
 	
 	useEffect(() => {
-	  getProductById(2)
+	  getBannerProduct()
 	    .then(setProduct)
 	    .catch(console.error)
 	}, []);
