@@ -24,6 +24,7 @@ export const CartProvider = ({ children }) => {
 	
 	const reducedCart = cart.map((item) => ({
 	  id: item.id,
+	  name: item.name,
 	  price: item.price,
 	  quantity: item.quantity,
 	}));
